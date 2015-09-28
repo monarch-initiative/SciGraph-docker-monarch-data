@@ -6,7 +6,7 @@
 #
 
 # Pull base image.
-FROM ubuntu:15.10
+FROM ubuntu:15.04
 
 RUN apt-get -y update && apt-get install -y software-properties-common python-software-properties
 
