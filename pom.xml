@@ -90,16 +90,20 @@
 
 
 								<!-- add indentation to the queries -->
+								<!--
 								<replaceregexp file="${project.build.directory}/generated-resources/cypher.yaml"
 									match="^" replace="    " byline="true" />
+									-->
 								<!-- add the header cypherResources: for yaml synthax -->
+								<!--
 								<concat
 									destfile="${project.build.directory}/generated-resources/queries_formatted.yaml">
 									<header>cypherResources:${line.separator}</header>
 									<filelist dir="${project.build.directory}/generated-resources/" files="cypher.yaml" />
 								</concat>
+								-->
 								<property name="monarch-queries-filename"
-									value="${project.build.directory}/generated-resources/queries_formatted.yaml" />
+									value="${project.build.directory}/generated-resources/cypher.yaml" />
 								<loadfile property="monarch-queries-file" srcfile="${monarch-queries-filename}" />
 								<replace
 									file="${project.build.directory}/generated-resources/monarch-server-config.yaml">
