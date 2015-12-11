@@ -3,7 +3,9 @@ Build two Docker images with the monarch configs. Uses master HEAD from the SciG
 
 Need to have docker installed in order to run the build.
 
-mvn package to generate the docker images locally.
+**Generate the docker images locally:**
+
+mvn package
 
 
 **Load the graph:**
