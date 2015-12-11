@@ -109,16 +109,20 @@
 									file="${project.build.directory}/generated-resources/monarch-server-config.yaml">
 									<replacefilter token="INJECT_QUERIES" value="${monarch-queries-file}" />
 								</replace>
-								<exec dir="${basedir}" executable="docker" output="${project.build.directory}/docker-build-load.log">
+								<exec dir="${basedir}" executable="docker" failonerror="true">
+   								<redirector output="${project.build.directory}/docker-build-load.log" alwayslog="true"/>
 								  <arg line="build -f src/main/resources/Dockerfile-load -t scigraph-load-monarch ."/>
 								</exec>
-								<exec dir="${basedir}" executable="docker" output="${project.build.directory}/docker-build-services.log">
+								<exec dir="${basedir}" executable="docker" failonerror="true">
+   								<redirector output="${project.build.directory}/docker-build-services.log" alwayslog="true"/>
 								  <arg line="build -f src/main/resources/Dockerfile-services -t scigraph-services-monarch ."/>
 								</exec>
-								<exec dir="${basedir}" executable="docker" output="${project.build.directory}/docker-build-export-load.log">
+								<exec dir="${basedir}" executable="docker" failonerror="true">
+   								<redirector output="${project.build.directory}/docker-build-export-load.log" alwayslog="true"/>
 								  <arg line="save -o target/scigraph-load-monarch.tar scigraph-load-monarch:latest"/>
 								</exec>
-								<exec dir="${basedir}" executable="docker" output="${project.build.directory}/docker-build-export-services.log">
+								<exec dir="${basedir}" executable="docker" failonerror="true">
+   								<redirector output="${project.build.directory}/docker-build-export-services.log" alwayslog="true"/>
 								  <arg line="save -o target/scigraph-services-monarch.tar scigraph-services-monarch:latest"/>
 								</exec>
 							</target>
