@@ -27,4 +27,5 @@ docker logs scigraph-services
 **Tips, remove all the local images**
 
 docker rm $(docker ps -a -q)
+
 docker rmi $(docker images -q)
