@@ -1,16 +1,13 @@
 graphConfiguration:
-    location: /scigraph/graph
-    indexedNodeProperties:
-      - label
-      - synonym
-      - fragment
-      - category
-    exactNodeProperties:
-      - label
-      - synonym
+    location: /var/scigraph-services/graph
     neo4jConfig:
       dump_configuration : true
-      dbms.pagecache.memory : 8G
+      dbms.pagecache.memory : 24G
+
+    indexedNodeProperties:
+      - label
+    exactNodeProperties:
+      - label
 
 ontologies:
   - url: http://purl.obolibrary.org/obo/upheno/monarch.owl
@@ -19,28 +16,35 @@ ontologies:
       addDirectInferredEdges: true
       addInferredEquivalences: true
       removeUnsatisfiableClasses: true
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/mgi_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/panther_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/clinvar_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/ncbigene_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/biogrid_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/zfin_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/ctd_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/hpoa_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/omim_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/coriell_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/hgnc_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/kegg_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/impc_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/ucscbands_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/monochrom.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/eom_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/genereviews_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/ensembl_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/orphanet_test.ttl
-  - url: http://nif-crawler.neuinfo.org/monarch/ttl/animalqtldb_test.ttl
+  - url: /export/www/html/monarch/ttl/mgi.ttl
+  - url: /export/www/html/monarch/ttl/panther.ttl
+  - url: /export/www/html/monarch/ttl/clinvar.ttl
+  - url: /export/www/html/monarch/ttl/ncbigene.ttl
+  - url: /export/www/html/monarch/ttl/biogrid.ttl
+  - url: /export/www/html/monarch/ttl/zfin.ttl
+  - url: /export/www/html/monarch/ttl/ctd.ttl
+  - url: /export/www/html/monarch/ttl/hpoa.ttl
+  - url: /export/www/html/monarch/ttl/omim.ttl
+  - url: /export/www/html/monarch/ttl/coriell.ttl
+  - url: /export/www/html/monarch/ttl/hgnc.ttl
+  - url: /export/www/html/monarch/ttl/kegg.ttl
+  - url: /export/www/html/monarch/ttl/impc.ttl
+  - url: /export/www/html/monarch/ttl/ucscbands.ttl
+#  - url: /export/www/html/monarch/ttl/cgd.ttl    # this is not ready yet
+  - url: /export/www/html/monarch/ttl/monochrom.ttl
+  - url: /export/www/html/monarch/ttl/eom.ttl
+  - url: /export/www/html/monarch/ttl/genereviews.ttl
+  - url: /export/www/html/monarch/ttl/orphanet.ttl
+  - url: /export/www/html/monarch/ttl/animalqtldb.ttl
+  #- url: /export/www/html/monarch/ttl/flybase.nt
+  #- url: /export/www/html/monarch/ttl/wormbase.nt
+  - url: /export/www/html/monarch/ttl/omia.ttl
+  - url: /export/www/html/monarch/ttl/mmrrc.ttl
+  - url: /export/www/html/monarch/ttl/gwascatalog.ttl
+  - url: /export1/monarch-ttl/monarch.ttl
+  - url: /export/www/html/monarch/ttl/mpd.ttl
 
-  #- url: http://biohackathon.org/resource/faldo.ttl
+  - url: http://biohackathon.org/resource/faldo.ttl
   - url: http://evidenceontology.googlecode.com/svn/trunk/eco.owl
   - url: http://purl.obolibrary.org/obo/iao.owl
   - url: https://raw.githubusercontent.com/monarch-initiative/GENO-ontology/develop/src/ontology/geno.owl
@@ -58,30 +62,37 @@ ontologies:
 categories:
     http://purl.obolibrary.org/obo/CL_0000000 : cell
     http://purl.obolibrary.org/obo/UBERON_0001062 : anatomical entity
-    http://purl.obolibrary.org/obo/ZFA_0009000 : cell
-    http://purl.obolibrary.org/obo/UBERON_0004529 : anatomical projection
-    http://purl.obolibrary.org/obo/UBERON_0000468 : multi-cellular organism
-    http://purl.obolibrary.org/obo/UBERON_0000955 : brain
+    #http://purl.obolibrary.org/obo/UBERON_0000468 : multi-cellular organism
     http://purl.obolibrary.org/obo/PATO_0000001 : quality
-    http://purl.obolibrary.org/obo/GO_0005623 : cell
-    http://purl.obolibrary.org/obo/WBbt_0007833 : organism
-    http://purl.obolibrary.org/obo/WBbt_0004017 : Cell
+    #http://purl.obolibrary.org/obo/GO_0005623 : cell
+    http://purl.obolibrary.org/obo/NCBITaxon_131567 : organism
+    http://purl.obolibrary.org/obo/CLO_0000031 : cell line
     http://purl.obolibrary.org/obo/DOID_4 : disease
-    http://purl.obolibrary.org/obo/PATO_0000003 : assay
-    http://purl.obolibrary.org/obo/PATO_0000006 : process
-    http://purl.obolibrary.org/obo/PATO_0000011 : age
-    http://purl.obolibrary.org/obo/ZFA_0000008 : brain
-    http://purl.obolibrary.org/obo/ZFA_0001637 : bony projection
-    http://purl.obolibrary.org/obo/WBPhenotype_0000061 : extended life span
-    http://purl.obolibrary.org/obo/WBPhenotype_0000039 : life span variant
-    http://purl.obolibrary.org/obo/WBPhenotype_0001171 : shortened life span
-    http://purl.obolibrary.org/obo/CHEBI_23367 : molecular entity
+    #http://purl.obolibrary.org/obo/PATO_0000003 : assay
+    #http://purl.obolibrary.org/obo/PATO_0000006 : process
+    #http://purl.obolibrary.org/obo/PATO_0000011 : age
+    #http://purl.obolibrary.org/obo/CHEBI_23367 : molecular entity
     http://purl.obolibrary.org/obo/CHEBI_23888 : drug
-    http://purl.obolibrary.org/obo/CHEBI_51086 : chemical role
     http://purl.obolibrary.org/obo/UPHENO_0001001 : Phenotype
-    http://purl.obolibrary.org/obo/GO_0008150 : biological_process
-    http://purl.obolibrary.org/obo/GO_0005575 : cellular component
+    #http://purl.obolibrary.org/obo/GO_0008150 : biological process
+    #http://purl.obolibrary.org/obo/GO_0005575 : cellular component
     http://purl.obolibrary.org/obo/SO_0000704 : gene
+    http://purl.obolibrary.org/obo/GENO_0000536 : genotype
+    http://purl.obolibrary.org/obo/GENO_0000504 : reagent targeted gene
+    #http://purl.obolibrary.org/obo/GENO_0000000 : intrinsic genotype
+    #http://purl.obolibrary.org/obo/GENO_0000524 : extrinsic genotype
+    #http://purl.obolibrary.org/obo/GENO_0000525 : effective genotype
+    http://purl.obolibrary.org/obo/GENO_0000002 : variant locus
+    http://purl.obolibrary.org/obo/SO_0001059 : sequence alteration
+    http://purl.obolibrary.org/obo/SO_0000110 : sequence feature
+    http://purl.obolibrary.org/obo/ECO_0000000 : evidence
+    http://purl.obolibrary.org/obo/PW_0000001 : pathway
+    http://purl.obolibrary.org/obo/IAO_0000310 : publication
+    http://xmlns.com/foaf/0.1/Person : person
+    http://purl.org/oban/association : association
+    # the following can be removed when VT/OBA is linked to UPheno
+    http://purl.obolibrary.org/obo/VT_0000001 : Phenotype
+    http://purl.obolibrary.org/obo/OBA_0000001 : Phenotype
 
 mappedProperties:
   - name: label
@@ -105,3 +116,22 @@ mappedProperties:
     properties:
     - http://purl.obolibrary.org/obo/IAO_0000115
     - http://www.w3.org/2004/02/skos/core#definition
+
+cliqueConfiguration:
+  relationships:
+    - sameAs
+    - equivalentClass
+  leaderAnnotation: http://www.monarchinitiative.org/MONARCH_cliqueLeader
+  leaderPriority:
+    - http://www.ncbi.nlm.nih.gov/gene/
+    - http://www.ncbi.nlm.nih.gov/pubmed/
+    - http://purl.obolibrary.org/obo/NCBITaxon_
+    - http://identifiers.org/ensembl/
+    - http://purl.obolibrary.org/obo/OMIM_
+    - http://purl.obolibrary.org/obo/DOID_
+    - http://purl.obolibrary.org/obo/Orphanet_
+    - http://purl.obolibrary.org/obo/HP_
+    - http://purl.obolibrary.org/obo/MP_
+    - http://purl.obolibrary.org/obo/ZP_
+  leaderForbiddenLabels:
+    - anonymous
