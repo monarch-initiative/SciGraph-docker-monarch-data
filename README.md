@@ -29,3 +29,12 @@ docker logs scigraph-services
 docker rm $(docker ps -a -q)
 
 docker rmi $(docker images -q)
+
+**Enabling the image writers**
+
+add that in the /etc/rc.local
+# for SciGraph ImageWriter
+Xvfb :1 -screen 0 800x600x16 &
+
+and that in the /etc.environment
+export DISPLAY=:1
