@@ -10,7 +10,8 @@ graphConfiguration:
       - label
 
 ontologies:
-  - url: http://purl.obolibrary.org/obo/upheno/monarch.owl
+  # - url: http://purl.obolibrary.org/obo/upheno/monarch.owl TODO keeps having error with the imports
+  - url: http://10.95.40.132/owl/monarch-merged.owl
     reasonerConfiguration:
       factory: org.semanticweb.elk.owlapi.ElkReasonerFactory
       addDirectInferredEdges: true
