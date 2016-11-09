@@ -31,7 +31,6 @@ ontologies:
   - url: http://data.monarchinitiative.org/ttl/kegg.ttl
   - url: http://data.monarchinitiative.org/ttl/impc.ttl
   - url: http://data.monarchinitiative.org/ttl/ucscbands.ttl
-#  - url: http://data.monarchinitiative.org/ttl/cgd.ttl    # this is not ready yet
   - url: http://data.monarchinitiative.org/ttl/monochrom.ttl
   - url: http://data.monarchinitiative.org/ttl/eom.ttl
   - url: http://data.monarchinitiative.org/ttl/genereviews.ttl
@@ -45,16 +44,20 @@ ontologies:
   - url: http://data.monarchinitiative.org/ttl/monarch.ttl
   - url: http://data.monarchinitiative.org/ttl/mpd.ttl
   - url: http://data.monarchinitiative.org/ttl/go.ttl
+  - url: http://data.monarchinitiative.org/ttl/mgi_slim.ttl
+  - url: http://data.monarchinitiative.org/ttl/zfin_slim.ttl
+  - url: http://data.monarchinitiative.org/ttl/reactome.ttl
+  - url: http://data.monarchinitiative.org/ttl/udp.ttl
 
   - url: http://biohackathon.org/resource/faldo.ttl
   - url: http://purl.obolibrary.org/obo/eco.owl
   - url: http://purl.obolibrary.org/obo/iao.owl
   - url: https://raw.githubusercontent.com/monarch-initiative/GENO-ontology/develop/src/ontology/geno.owl
-  #- url: http://purl.obolibrary.org/obo/ero.owl
-  - url: http://data.monarchinitiative.org/owl/ero.owl # temp fix, above url is unstable
+  - url: https://raw.githubusercontent.com/monarch-initiative/SEPIO-ontology/master/src/ontology/sepio.owl
+  - url: http://purl.obolibrary.org/obo/ero.owl
   - url: http://purl.obolibrary.org/obo/pw.owl
   - url: https://raw.githubusercontent.com/jamesmalone/OBAN/master/ontology/oban_core.ttl
-  #- url: https://build.berkeleybop.org/job/build-combined-noctua-models/lastSuccessfulBuild/artifact/noctua-models.owl
+  - url: http://build.berkeleybop.org/job/build-combined-noctua-models/lastSuccessfulBuild/artifact/noctua-models-noimport.owl
   # clo.owl is missing and import
   #- url: http://purl.obolibrary.org/obo/clo.owl
   - url: http://purl.obolibrary.org/obo/pco.owl
@@ -94,7 +97,7 @@ categories:
     http://purl.obolibrary.org/obo/ECO_0000000 : evidence
     http://purl.obolibrary.org/obo/PW_0000001 : pathway
     http://purl.obolibrary.org/obo/IAO_0000310 : publication
-    http://xmlns.com/foaf/0.1/Person : person
+    http://xmlns.com/foaf/0.1/Person : case
     http://purl.org/oban/association : association
     # the following can be removed when VT/OBA is linked to UPheno
     http://purl.obolibrary.org/obo/VT_0000001 : Phenotype
@@ -122,12 +125,15 @@ mappedProperties:
     properties:
     - http://purl.obolibrary.org/obo/IAO_0000115
     - http://www.w3.org/2004/02/skos/core#definition
-
+  - name: version
+    properties:
+    - http://www.w3.org/2002/07/owl#versionInfo
+    
 cliqueConfiguration:
   relationships:
     - sameAs
     - equivalentClass
-  leaderAnnotation: http://www.monarchinitiative.org/MONARCH_cliqueLeader
+  leaderAnnotation: https://monarchinitiative.org/MONARCH_cliqueLeader
   leaderPriority:
     - http://www.ncbi.nlm.nih.gov/gene/
     - http://www.ncbi.nlm.nih.gov/pubmed/
@@ -135,7 +141,7 @@ cliqueConfiguration:
     - http://identifiers.org/ensembl/
     - http://purl.obolibrary.org/obo/OMIM_
     - http://purl.obolibrary.org/obo/DOID_
-    - http://purl.obolibrary.org/obo/Orphanet_
+    - http://www.orpha.net/ORDO/Orphanet_
     - http://purl.obolibrary.org/obo/HP_
     - http://purl.obolibrary.org/obo/MP_
     - http://purl.obolibrary.org/obo/ZP_
