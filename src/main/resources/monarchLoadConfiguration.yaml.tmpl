@@ -13,13 +13,15 @@ graphConfiguration:
         - iri
 
 ontologies:
-  #- url: http://purl.obolibrary.org/obo/upheno/monarch.owl
+  # Monarch ontology
   - url: http://data.monarchinitiative.org/owl/monarch-merged.owl
     reasonerConfiguration:
       factory: org.semanticweb.elk.owlapi.ElkReasonerFactory
       addDirectInferredEdges: true
       addInferredEquivalences: true
       removeUnsatisfiableClasses: true
+  
+  # Data sources
   - url: http://data.monarchinitiative.org/ttl/mgi.ttl
   - url: http://data.monarchinitiative.org/ttl/panther.ttl
   - url: http://data.monarchinitiative.org/ttl/clinvar.ttl
@@ -57,11 +59,11 @@ ontologies:
   - url: http://data.monarchinitiative.org/ttl/rgd.ttl
   - url: http://data.monarchinitiative.org/ttl/sgd.ttl
   - url: http://data.monarchinitiative.org/ttl/mychem.ttl
-
+  
+  # Other ontologies
   - url: http://biohackathon.org/resource/faldo.ttl
   - url: http://purl.obolibrary.org/obo/eco.owl
   - url: http://purl.obolibrary.org/obo/iao.owl
-  - url: https://raw.githubusercontent.com/monarch-initiative/GENO-ontology/develop/src/ontology/geno.owl
   - url: https://raw.githubusercontent.com/monarch-initiative/SEPIO-ontology/master/src/ontology/sepio.owl
   - url: http://purl.obolibrary.org/obo/ero.owl
   - url: http://purl.obolibrary.org/obo/pw.owl
