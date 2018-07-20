@@ -20,6 +20,13 @@ ontologies:
       addDirectInferredEdges: true
       addInferredEquivalences: true
       removeUnsatisfiableClasses: true
+      
+  - url: https://raw.githubusercontent.com/monarch-initiative/GENO-ontology/develop/src/ontology/geno.owl
+    reasonerConfiguration:
+      factory: org.semanticweb.elk.owlapi.ElkReasonerFactory
+      addDirectInferredEdges: true
+      addInferredEquivalences: true
+      removeUnsatisfiableClasses: true
   
   # Data sources
   - url: http://data.monarchinitiative.org/ttl/mgi.ttl
